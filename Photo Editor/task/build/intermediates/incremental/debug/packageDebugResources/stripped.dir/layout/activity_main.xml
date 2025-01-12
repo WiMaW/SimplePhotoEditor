@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/ivPhoto"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <Button
+        android:id="@+id/btnGallery"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:text="gallery"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivPhoto" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivPhoto" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="brightness"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/slBrightness"
+        app:layout_constraintTop_toBottomOf="@id/btnGallery"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"/>
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slBrightness"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:stepSize="10"
+        android:value="0"
+        android:valueFrom="-250"
+        android:valueTo="250"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGallery"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="contrast"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/slContrast"
+        app:layout_constraintTop_toBottomOf="@id/slBrightness"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"/>
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slContrast"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:stepSize="10"
+        android:value="0"
+        android:valueFrom="-250"
+        android:valueTo="250"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slBrightness" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

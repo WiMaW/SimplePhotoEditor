@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.hyperskill.photoeditor.Stage3UnitTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-01-12T19:38:51" hostname="MacBook-Air-Wioleta.local" time="0.598">
+  <properties/>
+  <testcase name="test01_checkButtonSave" classname="org.hyperskill.photoeditor.Stage3UnitTest" time="0.09"/>
+  <testcase name="test02_checkPermissionWasAsked" classname="org.hyperskill.photoeditor.Stage3UnitTest" time="0.12"/>
+  <testcase name="test03_checkBitmapIsSaved" classname="org.hyperskill.photoeditor.Stage3UnitTest" time="0.16"/>
+  <testcase name="test04_checkBitmapIsSavedAfterPermissionIsGranted" classname="org.hyperskill.photoeditor.Stage3UnitTest" time="0.227"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

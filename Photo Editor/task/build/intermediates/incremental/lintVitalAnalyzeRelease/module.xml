@@ -1,0 +1,19 @@
+<lint-module
+    format="1"
+    dir="/Users/wioletawrobel/AndroidStudioProjects/Photo Editor/Photo Editor/task"
+    name=":Photo_Editor-task"
+    type="APP"
+    maven="Photo Editor:Photo_Editor-task:unspecified"
+    agpVersion="8.7.2"
+    buildFolder="build"
+    bootClassPath="/Users/wioletawrobel/Library/Android/sdk/platforms/android-35/android.jar:/Users/wioletawrobel/Library/Android/sdk/build-tools/34.0.0/core-lambda-stubs.jar"
+    javaSourceLevel="11"
+    compileTarget="android-35"
+    neverShrinking="true">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="release"/>
+</lint-module>

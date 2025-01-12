@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "org.hyperskill.photoeditor.Photo_Editor-task-mergeDebugResources-30:/values-port/values-port.xml",
+            "map": [
+                {
+                    "source": "/Users/wioletawrobel/.gradle/caches/8.9/transforms/36c6c676936b26d82aeea3ca89a598c7/transformed/appcompat-1.7.0/res/values-port/values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        }
+    ]
+}
