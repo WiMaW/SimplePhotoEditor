@@ -20,8 +20,8 @@
         android:id="@+id/btnGallery"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
         android:text="gallery"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivPhoto" />
@@ -39,12 +39,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="brightness"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/slBrightness"
-        app:layout_constraintTop_toBottomOf="@id/btnGallery"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:text="brightness"
+        app:layout_constraintEnd_toStartOf="@id/slBrightness"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnGallery" />
 
     <com.google.android.material.slider.Slider
         android:id="@+id/slBrightness"
@@ -56,18 +56,17 @@
         android:valueTo="250"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGallery"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/btnGallery" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="contrast"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/slContrast"
-        app:layout_constraintTop_toBottomOf="@id/slBrightness"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:text="contrast"
+        app:layout_constraintEnd_toStartOf="@id/slContrast"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/slBrightness" />
 
     <com.google.android.material.slider.Slider
         android:id="@+id/slContrast"
