@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.hyperskill.photoeditor.Stage2UnitTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-01-13T12:01:50" hostname="MacBook-Air-Wioleta.local" time="1.227">
+<testsuite name="org.hyperskill.photoeditor.Stage2UnitTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-01-15T20:13:24" hostname="MacBook-Air-Wioleta.local" time="1.25">
   <properties/>
-  <testcase name="test01_checkImageView" classname="org.hyperskill.photoeditor.Stage2UnitTest" time="0.049"/>
-  <testcase name="test02_checkButtonGallery" classname="org.hyperskill.photoeditor.Stage2UnitTest" time="0.058"/>
-  <testcase name="test03_checkSliderBrightness" classname="org.hyperskill.photoeditor.Stage2UnitTest" time="0.044"/>
-  <testcase name="test04_checkSliderNotCrashing" classname="org.hyperskill.photoeditor.Stage2UnitTest" time="0.04"/>
-  <testcase name="test05_checkDefaultBitmapEdit" classname="org.hyperskill.photoeditor.Stage2UnitTest" time="0.456"/>
-  <testcase name="test06_checkLoadedBitmapEdit" classname="org.hyperskill.photoeditor.Stage2UnitTest" time="0.266"/>
-  <testcase name="test07_checkDefaultBitmapEditExhaustive" classname="org.hyperskill.photoeditor.Stage2UnitTest" time="0.314"/>
+  <testcase name="test01_checkImageView" classname="org.hyperskill.photoeditor.Stage2UnitTest" time="0.051"/>
+  <testcase name="test02_checkButtonGallery" classname="org.hyperskill.photoeditor.Stage2UnitTest" time="0.069"/>
+  <testcase name="test03_checkSliderBrightness" classname="org.hyperskill.photoeditor.Stage2UnitTest" time="0.053"/>
+  <testcase name="test04_checkSliderNotCrashing" classname="org.hyperskill.photoeditor.Stage2UnitTest" time="0.049"/>
+  <testcase name="test05_checkDefaultBitmapEdit" classname="org.hyperskill.photoeditor.Stage2UnitTest" time="0.458"/>
+  <testcase name="test06_checkLoadedBitmapEdit" classname="org.hyperskill.photoeditor.Stage2UnitTest" time="0.253"/>
+  <testcase name="test07_checkDefaultBitmapEditExhaustive" classname="org.hyperskill.photoeditor.Stage2UnitTest" time="0.317"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

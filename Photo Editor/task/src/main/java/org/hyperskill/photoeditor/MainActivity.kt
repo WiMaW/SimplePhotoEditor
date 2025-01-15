@@ -12,6 +12,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
@@ -33,7 +34,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var photoUri: Uri
     private var originalImage: Bitmap? = null
-    private var avgBrightness: Int = 0
 
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -91,23 +91,31 @@ class MainActivity : AppCompatActivity() {
 
         var imageAfterBrightFilter: Bitmap? = null
         var imageAfterContrastFilter: Bitmap? = null
+        var imageBrightBeforeContrast: Bitmap? = null
 
         var contrastValue: Int = 0
         var brightValue: Int = 0
 
         sliderBrightness.addOnChangeListener { _, value, _ ->
-            brightValue = value.toInt()
-            imageAfterBrightFilter = imageFilterBrightness(value.toInt(), originalImage!!)
-            imageAfterBrightFilter = imageFilterContrast(contrastValue, imageAfterBrightFilter ?: originalImage!!)
-            currentImage.setImageBitmap(imageAfterBrightFilter)
+            contrastValue = sliderContrast.value.toInt()
+            if (contrastValue == 0) {
+                currentImage.setImageBitmap(imageFilterBrightness(value.toInt(), originalImage!!))
+            } else {
+                imageBrightBeforeContrast = imageFilterBrightness(value.toInt(), originalImage!!)
+                imageAfterContrastFilter = imageFilterContrast(contrastValue, imageBrightBeforeContrast ?: originalImage!!)
+                currentImage.setImageBitmap(imageFilterBrightness(value.toInt(), imageAfterContrastFilter ?: originalImage!!))
+
+            }
         }
 
         sliderContrast.addOnChangeListener { _, value, _ ->
-            contrastValue = value.toInt()
-            calculateAvgBrightness(currentImage.drawable.toBitmap())
-            imageAfterContrastFilter = imageFilterBrightness(brightValue, imageAfterContrastFilter ?: originalImage!!)
-            imageAfterContrastFilter = imageFilterContrast(value.toInt(), originalImage!!)
-            currentImage.setImageBitmap(imageAfterContrastFilter)
+            brightValue = sliderBrightness.value.toInt()
+            if (brightValue == 0) {
+                currentImage.setImageBitmap(imageFilterContrast(value.toInt(), originalImage!!))
+            } else {
+                imageAfterBrightFilter = imageFilterBrightness(brightValue, originalImage!!)
+                currentImage.setImageBitmap(imageFilterContrast(value.toInt(), imageAfterBrightFilter ?: originalImage!!))
+            }
         }
     }
 
@@ -198,43 +206,44 @@ class MainActivity : AppCompatActivity() {
         val originalWidth = image.width
         val originalHeight = image.height
         val newPicture =
-            Bitmap.createBitmap(originalWidth, originalHeight, Bitmap.Config.ARGB_8888)
-        val brightValue = bright
+            Bitmap.createBitmap(originalWidth, originalHeight, Bitmap.Config.RGB_565)
 
 
         for (w in 0 until originalWidth) {
             for (h in 0 until originalHeight) {
                 val pixelColor = image.getPixel(w, h)
-                val alpha = Color.alpha(pixelColor)
-                val R = (Color.red(pixelColor) + brightValue).coerceIn(0, 255)
-                val G = (Color.green(pixelColor) + brightValue).coerceIn(0, 255)
-                val B = (Color.blue(pixelColor) + brightValue).coerceIn(0, 255)
+             //   val alpha = Color.alpha(pixelColor)
+                val R = (Color.red(pixelColor) + bright).coerceIn(0, 255)
+                val G = (Color.green(pixelColor) + bright).coerceIn(0, 255)
+                val B = (Color.blue(pixelColor) + bright).coerceIn(0, 255)
 
-                newPicture.setPixel(w, h, Color.argb(alpha, R, G, B))
+                newPicture.setPixel(w, h, Color.rgb(R, G, B))
             }
         }
         calculateAvgBrightness(newPicture)
         return newPicture
     }
 
-    private fun imageFilterContrast(contrast: Int, imageAfterBright: Bitmap) : Bitmap {
+    private fun imageFilterContrast(contrast: Int, image: Bitmap) : Bitmap {
 
-        val originalWidth = imageAfterBright.width
-        val originalHeight = imageAfterBright.height
+        val originalWidth = image.width
+        val originalHeight = image.height
         val newPicture =
-            Bitmap.createBitmap(originalWidth, originalHeight, Bitmap.Config.ARGB_8888)
-        val contrastValue = contrast
-        var alphaContrast: Double = 0.0
+            Bitmap.createBitmap(originalWidth, originalHeight, Bitmap.Config.RGB_565)
+        var alphaContrast = 1.0
+        val avgBrightness = calculateAvgBrightness(image)
 
-        if (contrastValue < 255) {
-            alphaContrast = (255.0 + contrastValue) / (255 - contrastValue)
+        if (contrast < 255) {
+            alphaContrast = (255.0 + contrast) / (255 - contrast)
         }
+
+        Log.d("Alpha", "$alphaContrast")
 
         for (w in 0 until originalWidth) {
             for (h in 0 until originalHeight) {
-                val pixelColor = imageAfterBright.getPixel(w, h)
+                val pixelColor = image.getPixel(w, h)
 
-                val alpha = Color.alpha(pixelColor)
+//                val alpha = Color.alpha(pixelColor)
 
                 val R = (alphaContrast * (Color.red(pixelColor) - avgBrightness) + avgBrightness).toInt().coerceIn(0, 255)
 
@@ -242,13 +251,13 @@ class MainActivity : AppCompatActivity() {
 
                 val B = (alphaContrast * (Color.blue(pixelColor) - avgBrightness) + avgBrightness).toInt().coerceIn(0, 255)
 
-                newPicture.setPixel(w, h, Color.argb(alpha, R, G, B))
+                newPicture.setPixel(w, h, Color.rgb(R, G, B))
             }
         }
         return newPicture
     }
 
-    private fun calculateAvgBrightness(image: Bitmap) {
+    private fun calculateAvgBrightness(image: Bitmap) : Int {
         val originalWidth = image.width
         val originalHeight = image.height
         var pixelsBrightness: Long = 0
@@ -266,6 +275,8 @@ class MainActivity : AppCompatActivity() {
         }
         pixelsBrightness /= (originalWidth * originalHeight * 3)
 
-        avgBrightness = pixelsBrightness.toInt().coerceIn(0, 255)
+        Log.d("Avg brightness", "${pixelsBrightness.toInt().coerceIn(0, 255)}")
+
+        return pixelsBrightness.toInt().coerceIn(0, 255)
     }
 }

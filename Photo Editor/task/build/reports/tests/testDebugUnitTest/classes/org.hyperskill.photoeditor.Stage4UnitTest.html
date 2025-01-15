@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">3</div>
+<div class="counter">2</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">5.586s</div>
+<div class="counter">5.800s</div>
 <p>duration</p>
 </div>
 </td>
@@ -51,7 +51,7 @@
 </td>
 <td>
 <div class="infoBox failures" id="successRate">
-<div class="percent">66%</div>
+<div class="percent">77%</div>
 <p>successful</p>
 </div>
 </td>
@@ -70,48 +70,18 @@
 <div id="tab0" class="tab">
 <h2>Failed tests</h2>
 <div class="test">
-<a name="test05_checkBrightnessBeforeContrastWithHint"></a>
-<h3 class="failures">test05_checkBrightnessBeforeContrastWithHint</h3>
+<a name="test08_checkContrastBeforeBrightnessWithHint"></a>
+<h3 class="failures">test08_checkContrastBeforeBrightnessWithHint</h3>
 <span class="code">
-<pre>java.lang.AssertionError: Wrong values after filters been applied. For x=90, y=80, avgBrightness=139, cAlpha=0.5223 expected: &lt;(139, 155, 170)&gt; actual: &lt;(136, 151, 167)&gt;
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.hyperskill.photoeditor.internals.PhotoEditorUnitTest.assertColorsValues(PhotoEditorUnitTest.kt:107)
-	at org.hyperskill.photoeditor.Stage4UnitTest$test05_checkBrightnessBeforeContrastWithHint$1.invoke(Stage4UnitTest.kt:119)
-	at org.hyperskill.photoeditor.Stage4UnitTest$test05_checkBrightnessBeforeContrastWithHint$1.invoke(Stage4UnitTest.kt:101)
-	at org.hyperskill.photoeditor.internals.AbstractUnitTest.testActivity(AbstractUnitTest.kt:94)
-	at org.hyperskill.photoeditor.internals.AbstractUnitTest.testActivity$default(AbstractUnitTest.kt:77)
-	at org.hyperskill.photoeditor.Stage4UnitTest.test05_checkBrightnessBeforeContrastWithHint(Stage4UnitTest.kt:101)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.robolectric.RobolectricTestRunner$HelperTestRunner$1.evaluate(RobolectricTestRunner.java:502)
-	at org.robolectric.internal.SandboxTestRunner$2.lambda$evaluate$2(SandboxTestRunner.java:285)
-	at org.robolectric.internal.bytecode.Sandbox.lambda$runOnMainThread$0(Sandbox.java:104)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-</pre>
-</span>
-</div>
-<div class="test">
-<a name="test06_checkBrightnessBeforeContrastWithoutHint"></a>
-<h3 class="failures">test06_checkBrightnessBeforeContrastWithoutHint</h3>
-<span class="code">
-<pre>java.lang.AssertionError: Wrong values after filters been applied. For x=90, y=80 expected: &lt;(149, 177, 205)&gt; actual: &lt;(131, 159, 186)&gt;
+<pre>java.lang.AssertionError: Wrong values after filters been applied.  For x=90, y=80, avgBrightness=70, cAlpha=2.2903 expected: &lt;(70, 138, 207)&gt; actual: &lt;(10, 78, 147)&gt;
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.junit.Assert.assertTrue(Assert.java:42)
 	at org.hyperskill.photoeditor.internals.PhotoEditorUnitTest.assertColorsValues(PhotoEditorUnitTest.kt:106)
-	at org.hyperskill.photoeditor.Stage4UnitTest$test06_checkBrightnessBeforeContrastWithoutHint$1.invoke(Stage4UnitTest.kt:142)
-	at org.hyperskill.photoeditor.Stage4UnitTest$test06_checkBrightnessBeforeContrastWithoutHint$1.invoke(Stage4UnitTest.kt:125)
+	at org.hyperskill.photoeditor.Stage4UnitTest$test08_checkContrastBeforeBrightnessWithHint$1.invoke(Stage4UnitTest.kt:221)
+	at org.hyperskill.photoeditor.Stage4UnitTest$test08_checkContrastBeforeBrightnessWithHint$1.invoke(Stage4UnitTest.kt:201)
 	at org.hyperskill.photoeditor.internals.AbstractUnitTest.testActivity(AbstractUnitTest.kt:94)
 	at org.hyperskill.photoeditor.internals.AbstractUnitTest.testActivity$default(AbstractUnitTest.kt:77)
-	at org.hyperskill.photoeditor.Stage4UnitTest.test06_checkBrightnessBeforeContrastWithoutHint(Stage4UnitTest.kt:125)
+	at org.hyperskill.photoeditor.Stage4UnitTest.test08_checkContrastBeforeBrightnessWithHint(Stage4UnitTest.kt:201)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
@@ -130,18 +100,18 @@
 </span>
 </div>
 <div class="test">
-<a name="test07_checkBrightnessBeforeContrastWiderSample"></a>
-<h3 class="failures">test07_checkBrightnessBeforeContrastWiderSample</h3>
+<a name="test09_checkContrastBeforeBrightnessWithoutHint"></a>
+<h3 class="failures">test09_checkContrastBeforeBrightnessWithoutHint</h3>
 <span class="code">
-<pre>java.lang.AssertionError: Wrong values after filters been applied. For x=10, y=40 expected: &lt;(0, 118, 232)&gt; actual: &lt;(0, 108, 222)&gt;
+<pre>java.lang.AssertionError: Wrong values after filters been applied.  For x=90, y=80 expected: &lt;(141, 210, 255)&gt; actual: &lt;(151, 220, 255)&gt;
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.hyperskill.photoeditor.internals.PhotoEditorUnitTest.assertColorsValues(PhotoEditorUnitTest.kt:107)
-	at org.hyperskill.photoeditor.Stage4UnitTest$test07_checkBrightnessBeforeContrastWiderSample$1.invoke(Stage4UnitTest.kt:191)
-	at org.hyperskill.photoeditor.Stage4UnitTest$test07_checkBrightnessBeforeContrastWiderSample$1.invoke(Stage4UnitTest.kt:148)
+	at org.hyperskill.photoeditor.internals.PhotoEditorUnitTest.assertColorsValues(PhotoEditorUnitTest.kt:106)
+	at org.hyperskill.photoeditor.Stage4UnitTest$test09_checkContrastBeforeBrightnessWithoutHint$1.invoke(Stage4UnitTest.kt:248)
+	at org.hyperskill.photoeditor.Stage4UnitTest$test09_checkContrastBeforeBrightnessWithoutHint$1.invoke(Stage4UnitTest.kt:228)
 	at org.hyperskill.photoeditor.internals.AbstractUnitTest.testActivity(AbstractUnitTest.kt:94)
 	at org.hyperskill.photoeditor.internals.AbstractUnitTest.testActivity$default(AbstractUnitTest.kt:77)
-	at org.hyperskill.photoeditor.Stage4UnitTest.test07_checkBrightnessBeforeContrastWiderSample(Stage4UnitTest.kt:148)
+	at org.hyperskill.photoeditor.Stage4UnitTest.test09_checkContrastBeforeBrightnessWithoutHint(Stage4UnitTest.kt:228)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
@@ -172,48 +142,48 @@
 </thead>
 <tr>
 <td class="success">test01_checkSliderContrast</td>
-<td class="success">3.432s</td>
+<td class="success">3.687s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test02_checkSliderContrastNotCrashingByDefault</td>
-<td class="success">0.125s</td>
+<td class="success">0.130s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test03_checkContrastOnlyWithHint</td>
-<td class="success">0.291s</td>
+<td class="success">0.277s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test04_checkContrastOnlyWithoutHint</td>
-<td class="success">0.294s</td>
+<td class="success">0.286s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="failures">test05_checkBrightnessBeforeContrastWithHint</td>
-<td class="failures">0.323s</td>
-<td class="failures">failed</td>
-</tr>
-<tr>
-<td class="failures">test06_checkBrightnessBeforeContrastWithoutHint</td>
-<td class="failures">0.293s</td>
-<td class="failures">failed</td>
-</tr>
-<tr>
-<td class="failures">test07_checkBrightnessBeforeContrastWiderSample</td>
-<td class="failures">0.286s</td>
-<td class="failures">failed</td>
-</tr>
-<tr>
-<td class="success">test08_checkContrastBeforeBrightnessWithHint</td>
-<td class="success">0.279s</td>
+<td class="success">test05_checkBrightnessBeforeContrastWithHint</td>
+<td class="success">0.283s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">test09_checkContrastBeforeBrightnessWithoutHint</td>
-<td class="success">0.263s</td>
+<td class="success">test06_checkBrightnessBeforeContrastWithoutHint</td>
+<td class="success">0.283s</td>
 <td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">test07_checkBrightnessBeforeContrastWiderSample</td>
+<td class="success">0.301s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="failures">test08_checkContrastBeforeBrightnessWithHint</td>
+<td class="failures">0.287s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">test09_checkContrastBeforeBrightnessWithoutHint</td>
+<td class="failures">0.266s</td>
+<td class="failures">failed</td>
 </tr>
 </table>
 </div>
@@ -225,7 +195,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.9</a> at Jan 13, 2025, 1:01:52 PM</p>
+<a href="http://www.gradle.org">Gradle 8.9</a> at Jan 15, 2025, 9:13:25 PM</p>
 </div>
 </div>
 </body>

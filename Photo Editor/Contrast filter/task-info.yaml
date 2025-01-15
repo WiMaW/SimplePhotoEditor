@@ -61,7 +61,7 @@ files:
 feedback_link: https://hyperskill.org/projects/241/stages/1209/implement#comment
 status: Failed
 feedback:
-  message: "Wrong values after filters been applied. For x=90, y=80 expected: &lt;(149,\
-    \ 177, 205)&gt; actual: &lt;(131, 159, 186)&gt;"
-  time: "Mon, 13 Jan 2025 12:01:52 UTC"
+  message: "Wrong values after filters been applied.  For x=90, y=80 expected: &lt;(141,\
+    \ 210, 255)&gt; actual: &lt;(151, 220, 255)&gt;"
+  time: "Wed, 15 Jan 2025 20:13:26 UTC"
 record: -1

@@ -2,9 +2,5 @@
     {
         "merged": "org.hyperskill.photoeditor.Photo_Editor-task-mergeDebugResources-31:/layout/activity_main.xml",
         "source": "org.hyperskill.photoeditor.Photo_Editor-task-main-34:/layout/activity_main.xml"
-    },
-    {
-        "merged": "/Users/wioletawrobel/.gradle/daemon/8.9/org.hyperskill.photoeditor.Photo_Editor-task-mergeDebugResources-31:/layout/activity_main.xml",
-        "source": "/Users/wioletawrobel/.gradle/daemon/8.9/org.hyperskill.photoeditor.Photo_Editor-task-main-34:/layout/activity_main.xml"
     }
 ]
